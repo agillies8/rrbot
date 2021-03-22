@@ -2,7 +2,7 @@ Demo of a robot arm in gazebo
 
 Adapted from chapter 5 of ROS robotics by example
 
-Updated several things to work in Melodic
+Updated several things to work in Melodic, then added and extra joint, a camera, connected to gazebo and detect april tags.
 
 Instructions:
 * Clone package into your catkin workspace
