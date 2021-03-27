@@ -11,6 +11,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   rviz
   std_msgs
+  apriltag_ros
 )
 
 catkin_package(
@@ -23,6 +24,7 @@ catkin_package(
     rospy
     rviz
     std_msgs
+    apriltag_ros
 )
 ## Install ##
 
@@ -44,6 +46,5 @@ find_package(gazebo REQUIRED)
 
 link_directories(${GAZEBO_LIBRARY_DIRS})
 include_directories(${Boost_INCLUDE_DIR} ${catkin_INCLUDE_DIRS} ${GAZEBO_INCLUDE_DIRS})
-
 
 

@@ -78,7 +78,10 @@ Test 9: add a plugin that allows you to move box with cmd_vel:
 * launch apriltag continuous detection and see how it can track cube when its in frame
 
 Goal 9: Next step:
-* bring all launch files together
-* publish a topic that has coordinates of box within the image frame
-* create a subscriber to that which publishes robot joint commands based on coordinates
-* write a node that controls box to drive in a loop
+* bring all launch files together: roslaunch rrbot rrbot_9.launch model:=rrbot6.xacro
+* calculate x and y angles from camera vector to box: Done in cam_controller.py
+* create a subscriber to that which publishes robot joint commands based on coordinates: also in cam_controller.pu
+* write a node that controls box to drive in a loop (incomplete)
+* to run above, run bullet point 1, then rosrun rrbot cam_controller.py
+* robot will scan until it sees tag, then it will visual servo to center of frame
+* you can drive the box around using telo_twist and see the arm tracking the box 

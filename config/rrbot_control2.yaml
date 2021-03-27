@@ -8,7 +8,7 @@ rrbot:
   joint_rot_main_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint_rot_main
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 200.0, i: 0.03, d: 15.0}
 
 
   joint_main_mid_position_controller:
@@ -19,7 +19,7 @@ rrbot:
   joint_mid_top_position_controller:
     type: effort_controllers/JointPositionController
     joint: joint_mid_top
-    pid: {p: 100.0, i: 0.01, d: 10.0}
+    pid: {p: 300.0, i: 0.03, d: 20.0}
   left_gripper_joint_position_controller:
     type: effort_controllers/JointPositionController
     joint: left_gripper_joint
