@@ -62,3 +62,23 @@ Test 8: add april tag to gazebo and detect it:
 * view tagged image: rosrun image_view image_view image:=/tag_detections_image
 * check it in rviz by adding robot_model and TIFFFieldWithTag
 * can also see the world coordinates of the tag via: rosrun tf tf_echo /world /tag_0
+
+Test 9: add a plugin that allows you to move box with cmd_vel:
+* get the plugin from here: https://www.youtube.com/watch?v=mtSpqObg9X4&ab_channel=TheConstruct
+* add the planner_mover.cpp file to src
+* add the plugin tag to model.sdf
+* add colliion, coordinate, friction and interial props to box, remove static tag
+* update cmakelists and package.xml to include new plugin and deps and rebuild
+* source devel/setup.bash
+* launch the robot in gazebo: roslaunch rrbot rrbot_gazebo.launch model:=rrbot6.xacro
+* launch the  controllers: roslaunch rrbot rrbot_control.launch controller:=rrbot_control2.yaml
+* spawn the cube with tags on it: roslaunch rrbot spawn_apriltag.launch
+* launch keyboard teleop controller, and see if you can command box around from keyboard
+* launch rqt and command robot to see the cube
+* launch apriltag continuous detection and see how it can track cube when its in frame
+
+Goal 9: Next step:
+* bring all launch files together
+* publish a topic that has coordinates of box within the image frame
+* create a subscriber to that which publishes robot joint commands based on coordinates
+* write a node that controls box to drive in a loop

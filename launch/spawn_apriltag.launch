@@ -1,7 +1,7 @@
   
 <launch>
     <include file="$(find rrbot)/launch/spawn_sdf.launch">
-        <arg name="robot_name" value="AprilTag" />
+        <arg name="robot_name" value="Box" />
         <arg name="x" value="1.0" />
         <arg name="y" value="1.0" />
         <arg name="z" value="0.0" />
